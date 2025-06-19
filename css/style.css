@@ -1,10 +1,20 @@
 /********** Template CSS **********/
 :root {
-    --primary: #355EFC;
-    --secondary: #E93C05;
-    --tertiary: #555555;
-    --light: #DFE4FD;
-    --dark: #011A41;
+    --primary: #1ca053;         /* Verde principal */
+    --secondary: #a6d5bd;       /* Verde pastel suave (más claro y relajado) */
+    --tertiary: #e9f7ef;        /* Verde muy claro */
+    --light: #f4fcf7;           /* Blanco verdoso, para fondos suaves */
+    --dark: #145c36;            /* Verde profundo, para texto o secciones oscuras */
+
+    --verde-suave: #c8e3d4;     /* Verde más pastel aún, para detalles visuales */
+    --gris-verdoso: #6f8f80;    /* Gris verdoso neutro, ideal para íconos y texto auxiliar */
+    --icon-bg: #f4fcf7;         /* Fondo de íconos claro */
+    --icon-hover: #16804a;      /* Hover sutil para íconos */
+    --text-alt: #5c5c5c;        /* Texto alternativo: gris más suave y legible */
+}
+
+.navbar-brand h1 {
+  color: var(--primary); /* o cualquier color que desees */
 }
 
 .back-to-top {
@@ -13,6 +23,35 @@
     right: 30px;
     bottom: 30px;
     z-index: 99;
+}
+
+
+.icon-white {
+  color: white;
+}
+
+/* Logo en la navbar en blanco */
+.navbar-brand .display-5 {
+  color: #ffffff !important;
+}
+
+/* Texto y botón del carousel en blanco */
+.carousel-item .carousel-caption p,
+.carousel-item .carousel-caption h1,
+.carousel-item .carousel-caption .btn-primary {
+  color: #ffffff !important;
+}
+
+/* Si quieres que el botón tenga fondo transparente y texto blanco */
+.carousel-item .carousel-caption .btn-primary {
+  background-color: transparent !important;
+  border: 1px solid #ffffff;
+}
+
+/* Opcional: al hacer hover el botón invierte colores */
+.carousel-item .carousel-caption .btn-primary:hover {
+  background-color: #ffffff !important;
+  color: var(--dark) !important; /* o #145c36 */
 }
 
 h1,
@@ -99,7 +138,7 @@ h6,
 
 .top-bar {
     height: 45px;
-    border-bottom: 1px solid rgba(53, 94, 252, .07);
+    border-bottom: 1px solid rgba(28, 160, 83, 0.10); /* Verde principal, muy suave */
 }
 
 .navbar .dropdown-toggle::after {
@@ -126,8 +165,8 @@ h6,
 @media (max-width: 991.98px) {
     .navbar .navbar-nav {
         margin-top: 10px;
-        border-top: 1px solid rgba(0, 0, 0, .07);
-        background: #FFFFFF;
+        border-top: 1px solid rgba(20, 92, 54, 0.07); /* Verde oscuro, muy suave */
+        background: #f4fcf7; /* Blanco verdoso */
     }
 
     .navbar .navbar-nav .nav-link {
@@ -222,7 +261,7 @@ h6,
 
 /*** Facts ***/
 .facts {
-    background: linear-gradient(rgba(53, 94, 252, .95), rgba(53, 94, 252, .95)), url(../img/bg.png);
+    background: linear-gradient(rgba(28, 160, 83, 0.95), rgba(20, 92, 54, 0.95)), url(../img/bg.png); /* De verde principal a verde oscuro */
 }
 
 
@@ -238,7 +277,7 @@ h6,
     height: 50%;
     top: 0;
     left: 0;
-    background: linear-gradient(rgba(53, 94, 252, .95), rgba(53, 94, 252, .95)), url(../img/bg.png);
+    background: linear-gradient(rgba(28, 160, 83, 0.95), rgba(20, 92, 54, 0.95)), url(../img/bg.png); /* De verde principal a verde oscuro */
     z-index: -1;
 }
 
@@ -255,7 +294,7 @@ h6,
 }
 
 .feature .feature-box:hover * {
-    color: #FFFFFF !important;
+    color: #e9f7ef !important; /* Verde muy claro */
 }
 
 
@@ -270,11 +309,11 @@ h6,
 }
 
 .service .nav .nav-link.active h5 {
-    color: #FFFFFF !important;
+    color: #e9f7ef !important; /* Verde muy claro */
 }
 
 .service .nav .nav-link.active h5 i {
-    color: #FFFFFF !important;
+    color: #e9f7ef !important; /* Verde muy claro */
 }
 
 
@@ -290,7 +329,7 @@ h6,
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, .5);
+    background: rgba(244, 252, 247, 0.85); /* Blanco verdoso translúcido */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -328,7 +367,7 @@ h6,
 }
 
 .project-item:hover .project-title h4 {
-    color: #FFFFFF;
+    color: #e9f7ef;
 }
 
 .project-carousel .owl-nav {
@@ -397,7 +436,7 @@ h6,
 }
 
 .team-item:hover .team-text h4 {
-    color: #FFFFFF;
+    color: #e9f7ef;
 }
 
 .team-item .team-social .btn {
@@ -406,7 +445,7 @@ h6,
 }
 
 .team-item:hover .team-social .btn {
-    background: #FFFFFF;
+    background: #f4fcf7;
 }
 
 .team-item .team-social .btn:hover {
@@ -453,7 +492,7 @@ h6,
     left: 50%;
     transform: translateX(-50%);
     border: 30px solid;
-    border-color: #FFFFFF transparent transparent transparent;
+    border-color: #e9f7ef transparent transparent transparent;
 }
 
 .testimonial-carousel .owl-item img {
@@ -529,7 +568,7 @@ h6,
 
 .copyright {
     color: var(--light);
-    background: #000B1C;
+    background: #145c36;
 }
 
 .copyright a {
