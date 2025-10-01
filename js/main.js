@@ -110,6 +110,79 @@
         }
     });
 
-    
+    // Chart: Indicadores clave (gráfica lineal usando colores del tema)
+    const chartCanvas = document.getElementById('tmChart');
+    if (chartCanvas && window.Chart) {
+        // Obtener colores del tema desde CSS variables
+        const rootStyles = getComputedStyle(document.documentElement);
+        const colorPrimary = rootStyles.getPropertyValue('--primary').trim() || '#1ca053';
+        const colorSecondary = rootStyles.getPropertyValue('--secondary').trim() || '#a6d5bd';
+        const colorTertiary = rootStyles.getPropertyValue('--tertiary').trim() || '#e9f7ef';
+        const colorDark = rootStyles.getPropertyValue('--dark').trim() || '#145c36';
+
+        const labels = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'];
+        const data = {
+            labels,
+            datasets: [
+                {
+                    label: 'Labores / mes',
+                    data: [120, 160, 130, 180, 140, 190],
+                    borderColor: colorPrimary,
+                    backgroundColor: colorPrimary + '33',
+                    tension: 0.15,
+                    fill: true,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#ffffff',
+                    pointBorderColor: colorPrimary,
+                    pointBorderWidth: 2,
+                    borderWidth: 3
+                },
+                {
+                    label: 'Horas maquinaria',
+                    data: [300, 360, 320, 380, 340, 420],
+                    borderColor: colorSecondary,
+                    backgroundColor: colorSecondary + '33',
+                    tension: 0.15,
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#ffffff',
+                    pointBorderColor: colorSecondary,
+                    pointBorderWidth: 2,
+                    borderWidth: 3
+                }
+            ]
+        };
+
+        const options = {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: true, labels: { color: colorDark } },
+                tooltip: {
+                    backgroundColor: colorDark,
+                    titleColor: '#ffffff',
+                    bodyColor: '#ffffff',
+                    padding: 12,
+                }
+            },
+            scales: {
+                x: {
+                    grid: { display: false },
+                    ticks: { color: colorDark }
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: { color: colorTertiary },
+                    ticks: { color: colorDark }
+                }
+            }
+        };
+
+        new Chart(chartCanvas, {
+            type: 'line',
+            data,
+            options
+        });
+    }
 })(jQuery);
 
